@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Football from</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h2 class="form-heading">
+                Football Registration Form
+            </h2>
+
+            <form action="/" method="POST" class="form-box">
+                <div class="form-row">
+                    <div class="inp-field">
+                        <label for="firstName" class="form-label">FIRST NAME</label>
+                        <sup class="mandatory">*</sup>
+                        <input type="text" name="firstName" id="firstName" class="input-col" placeholder="What is your name?" required>
+                    </div>
+                    <div class="inp-field">
+                        <label for="lastName" class="form-label">LAST NAME</label>
+                        <input type="text" name="lastName" id="lastName" class="input-col" placeholder="What is your last name?">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inp-field">
+                        <label for="number" class="form-label">PHONE NUMBER</label>
+                        <sup class="mandatory">*</sup>
+                        <br><br>
+                        <div class="form-row">
+                            <select name="code" id="code">
+                            <option value="+1">+1</option>
+                            <option value="+2">+2</option>
+                            <option selected value="+91">+91</option>
+                            <option value="+92">+92</option>
+                            </select>
+                            <input type="number" name="number" id="number" placeholder="What is the best # to reach you?" required>
+                        </div>     
+                    </div>
+                    <div class="inp-field">
+                        <label for="email" class="form-label">EMAIL</label> 
+                        <br>
+                        <input type="email" name="email" id="email" class="input-col" placeholder="What is your e-mail address?">
+                    </div>
+                    <div class="inp-field">
+                        <label for="age" class="form-label">AGE GROUP</label>
+                        <sup class="mandatory">*</sup>
+                        <br>
+                        <select name="age" id="age" class="input-col" required>
+                            <option value="12-18 years">12-18 years</option>
+                            <option value="18-24 years">18-24 years</option>
+                            <option value="24-30 years">24-30 years</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inp-field">
+                        <label for="team" class="form-label">DESIRED TEAM</label>
+                        <sup class="mandatory">*</sup>
+                        <br><br>
+
+                        <input type="radio" id="team1" name="myTeam" value="chelsea">
+                        <label for="chelsea" class="form-option">CHELSEA</label><br><br>
+                        <input type="radio" id="team2" name="myTeam" value="manchester">
+                        <label for="manchester" class="form-option">MANCHESTER UNITED</label><br><br>
+                        <input type="radio" id="team3" name="myTeam" value="liverpool">
+                        <label for="liverpool" class="form-option">LIVERPOOL</label><br><br>
+                        <input type="radio" id="team4" name="myTeam" value="barcelona">
+                        <label for="barcelona" class="form-option">BARCELONA</label>
+                    </div>
+                    <div class="inp-field"> 
+                        <label for="position" class="form-label">DESIRED POSITION</label>
+                        <sup class="mandatory">*</sup>
+                        <br><br>
+
+                        <input type="checkbox" id="position1" name="position1" value="goalKeeper">
+                        <label for="position1" class="form-option"> GOAL KEEPER</label><br><br>
+                        <input type="checkbox" id="position2" name="position2" value="offensive">
+                        <label for="position2" class="form-option"> OFFENSIVE</label><br><br>
+                        <input type="checkbox" id="position3" name="position3" value="defence">
+                        <label for="position3" class="form-option"> DEFENCE</label><br><br>
+                        <input type="checkbox" id="position4" name="position4" value="receiver">
+                        <label for="position4" class="form-option"> RECEIVER</label>
+                    </div>
+                    <div class="inp-field">
+                        <label for="address" class="form-label">ADDRESS</label> <br>
+                        <textarea rows="8" cols="20" class="input-col" name="address"></textarea>
+                    </div>
+                    <div class="inp-field">
+                        <label for="pinCode" class="form-label">PIN CODE</label> <br>
+                        <input type="number" name="pinCode" id="pinCode" class="input-col" minlength="6" placeholder="Enter your Pin code">
+                    </div>
+                </div>
+                <br><br>
+                <div class="form-row countryColumn">
+                    <div id="country-field">
+                        <label for="country" class="form-label">COUNTRY</label>
+                        <sup class="mandatory">*</sup>
+                        <br>
+                        <select name="country" id="countySelect" size="1" class="input-col">
+                        <option value="" selected="selected">Country</option>
+                        </select><br>
+                        
+                        <label for="state" class="form-label">STATE</label>                        <sup class="mandatory">*</sup>
+                        <br>
+                        <select name="state" id="stateSelect" size="1" class="input-col">
+                        <option value="" selected="selected">State</option>
+                        </select><br>
+                        
+                        <label for="district" class="form-label">DISTRICT</label>
+                        <sup class="mandatory">*</sup>
+                        <br>
+                        <select name="district" id="districtSelect" size="1" class="input-col">
+                        <option value="" selected="selected">District</option>
+                        </select><br>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Phewww! Let's submit it</button>
+                <br>
+            </form>
+            
+            <hr>
+        </div>
+        
+    </div>
+</body>
+</html>

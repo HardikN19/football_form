@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: black;
+}
+.btn-submit{
+    margin: 2rem auto;
+    display: flex;
+    background-color: rgb(12, 133, 12);
+    color: white;
+    border: none;
+    padding: 0.2rem 3rem;
+}
+.container{
+    width: 85%;
+    margin: auto;
+}
+.form-header{
+    background-color: lightblue;
+    border: 1rem solid white;
+    
+}
+.form-heading{
+    padding: 1rem;
+    text-align: center;
+}
+
+.form-box{
+    background-color: white;
+    margin: 0.25rem 1rem;
+}
+.form-label{
+    color: grey;
+    font-weight: bold;
+    font-size: 12px;
+}
+.form-option{
+    color: grey;
+    font-size: 12px;
+}
+.form-row{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.input-col{
+    width: 100%;
+    margin: 1rem 0;
+}
+.inp-field{
+    padding: 0.2rem 1rem;
+    border: 0.5px solid lightgrey;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.countryColumn{
+    width: 30vw;
+    margin: auto;
+}
+#country-field{
+    border: 1px solid white ;
+    padding: 1rem;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.mandatory{
+    color: red;
+    margin: 5px 0 0 -5px;
+}
+textarea {
+    resize: none;
+}
+#code{
+    display: flex;
+}
+#number{
+    flex-grow: 1;
+}
+
