@@ -17,6 +17,11 @@
             <form action="/" method="POST" class="form-box">
                 <div class="form-row">
                     <div class="form-column">
+                        <label for="userName" class="form-label">USER NAME</label>
+                        <span class="mandatory">*</span>
+                        <input type="text" name="userName" id="userName" class="input-col" placeholder="Enter username.." required>
+                    </div>
+                    <div class="form-column">
                         <label for="firstName" class="form-label">FIRST NAME</label>
                         <span class="mandatory">*</span>
                         <input type="text" name="firstName" id="firstName" class="input-col" placeholder="What is your name?" required>
@@ -44,6 +49,10 @@
                     </div>
                     <div class="form-column">
                         <label for="email" class="form-label">EMAIL</label> 
+                        <label class="switch">
+                            <input id="slide" type="checkbox" checked>
+                            <span class="slider round"></span>
+                          </label>
                         <br>
                         <input type="email" name="email" id="email" class="input-col" placeholder="What is your e-mail address?">
                     </div>
