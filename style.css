@@ -80,7 +80,7 @@ body{
     flex-grow: 1;
     flex-basis: 1;
 }
-.mandatory{
+.warning{
     color: red;
     margin: 5px 0 0 -5px;
 }

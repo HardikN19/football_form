@@ -18,12 +18,13 @@
                 <div class="form-row">
                     <div class="form-column">
                         <label for="userName" class="form-label">USER NAME</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">*</span>
                         <input type="text" name="userName" id="userName" class="input-col" placeholder="Enter username.." required>
                     </div>
                     <div class="form-column">
                         <label for="firstName" class="form-label">FIRST NAME</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">* </span>
+                        <span class="errorMessage warning"> </span>
                         <input type="text" name="firstName" id="firstName" class="input-col" placeholder="What is your name?" required>
                     </div>
                     <div class="form-column">
@@ -35,7 +36,7 @@
                 <div class="form-row">
                     <div class="form-column">
                         <label for="number" class="form-label">PHONE NUMBER</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">*</span>
                         <br>
                         <div class="form-row">
                             <select name="code" id="code">
@@ -58,7 +59,7 @@
                     </div>
                     <div class="form-column">
                         <label for="age" class="form-label">AGE GROUP</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">*</span>
                         <br>
                         <select name="age" id="age" class="input-col" required>
                             <option value="">Select age group</option>
@@ -71,7 +72,7 @@
                 <div class="form-row">
                     <div class="form-column">
                         <label for="team" class="form-label">DESIRED TEAM</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">*</span>
                         <br><br>
                         <div class="form-option">
                             <input type="radio" id="team1" name="myTeam" value="chelsea">
@@ -93,7 +94,7 @@
                     </div>
                     <div class="form-column"> 
                         <label for="position" class="form-label">DESIRED POSITION</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">*</span>
                         <br><br>
                         <div class="form-option">
                             <input type="checkbox" id="position1" name="position1" value="goalKeeper">
@@ -121,27 +122,30 @@
                         <textarea rows="6" cols="20" class="input-col" name="address"></textarea>
                     </div>
                     <div class="form-column">
-                        <label for="pinCode" class="form-label">PIN CODE</label> <br>
-                        <input type="number" name="pinCode" id="pinCode" class="input-col" minlength="6" placeholder="Enter your Pin code">
+                        <label for="pinCode" class="form-label">PIN CODE</label>
+                        <span class="errorMessage warning"> </span> <br>
+                        <input type="number" name="pinCode" id="pinCode" class="input-col" maxlength="6" placeholder="Enter your Pin code"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength = "10">
                     </div>
                 </div>
                 <div class="form-row countryColumn">
                     <div id="country-field">
                         <label for="country" class="form-label">COUNTRY</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">*</span>
                         <br>
                         <select name="country" id="countySelect" size="1" class="input-col">
                         <option value="" selected="selected">Country</option>
                         </select><br>
                         
-                        <label for="state" class="form-label">STATE</label>                        <span class="mandatory">*</span>
+                        <label for="state" class="form-label">STATE</label>                        <span class="warning">*</span>
                         <br>
                         <select name="state" id="stateSelect" size="1" class="input-col">
                         <option value="" selected="selected">State</option>
                         </select><br>
                         
                         <label for="district" class="form-label">DISTRICT</label>
-                        <span class="mandatory">*</span>
+                        <span class="warning">*</span>
                         <br>
                         <select name="district" id="districtSelect" size="1" class="input-col">
                         <option value="" selected="selected">District</option>
