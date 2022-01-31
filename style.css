@@ -4,8 +4,9 @@
 body{
     background-color: black;
 }
-.btn-submit{
-    margin: 2rem auto;
+
+#btn-submit{
+    margin: 0.5rem auto;
     display: flex;
     background-color: rgb(12, 133, 12);
     color: white;
@@ -22,7 +23,7 @@ body{
     
 }
 .form-heading{
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
 }
 
@@ -30,30 +31,45 @@ body{
     background-color: white;
     margin: 0.25rem 1rem;
 }
+
 .form-label{
     color: grey;
     font-weight: bold;
     font-size: 12px;
 }
-.form-option{
+.form-option, select, input::placeholder{
     color: grey;
     font-size: 12px;
 }
+.form-option{
+    margin: -0.2rem 0;
+}
+
 .form-row{
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
 }
-.input-col{
-    width: 100%;
-    margin: 1rem 0;
-}
-.inp-field{
+
+.form-column{
     padding: 0.2rem 1rem;
     border: 0.5px solid lightgrey;
     flex-grow: 1;
     flex-basis: 0;
 }
+
+#code, #number, select{
+    margin: 0.5rem 0;
+}
+#number{
+    flex-grow: 1;
+}
+
+.input-col{
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
 .countryColumn{
     width: 30vw;
     margin: auto;
@@ -71,10 +87,6 @@ body{
 textarea {
     resize: none;
 }
-#code{
-    display: flex;
-}
-#number{
-    flex-grow: 1;
-}
+
+
 
