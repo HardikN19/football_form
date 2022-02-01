@@ -5,45 +5,56 @@ const phoneNumber = document.querySelector('#phoneNumber');
 const pinCode = document.querySelector('#pinCode');
 const slider = document.querySelector('#slide');
 const email = document.querySelector('#email');
-
+const age = document.querySelector('#age');
 const errorMessage = document.querySelectorAll('.errorMessage');
 const btnSubmit = document.querySelector('#btn-submit');
 
-
-userName.addEventListener('input',()=>{
+function checkUserName(){
     let text = userName.value;
     let length = text.length;
     for(let i=0;i<length;i++){
         if(text[i]==' ')
         {
-            btnSubmit.disabled = true;
-            errorMessage[0].innerHTML = ` [Please remove space!]`;
+            return false;
         }
         else{
-            btnSubmit.disabled = false;
-            errorMessage[0].innerHTML = ``;
+            return true;
         }
     }
+}
+
+userName.addEventListener('input',()=>{
+    let check = checkUserName();
+    if(check){
+        errorMessage[1].innerHTML = ``;
+    }
+    else{
+        errorMessage[1].innerHTML = `[Only alphabet allowed / no space]`;
+    }
+    checkSubmitBtn();
 });
 
-firstName.addEventListener('input',()=>{
+function checkFirstName(){
     let text = firstName.value;
     let length = text.length;
     for(let i=0;i<length;i++){
-        if(text[i]>='a'&& text[i]<='z' || text[i]>='A'&& text[i]<='Z')
-        {
-            btnSubmit.disabled = false;
-            errorMessage[1].innerHTML = ``;
-        }
-        else if(length == 0){
-            btnSubmit.disabled = false;
-            errorMessage[1].innerHTML = ``;
-        }
+        if(text[i]>='a'&& text[i]<='z' || text[i]>='A'&& text[i]<='Z') {}
         else{
-            btnSubmit.disabled = true;
-            errorMessage[1].innerHTML = `[Only alphabet allowed / no space]`;
+            return false;
         }
     }
+    return true;
+}
+
+firstName.addEventListener('input',()=>{
+    let check = checkFirstName();
+    if(check){
+        errorMessage[1].innerHTML = ``;
+    }
+    else{
+        errorMessage[1].innerHTML = `[Only alphabet allowed / no space]`;
+    }
+    checkSubmitBtn();
 });
 
 lastName.addEventListener('input',()=>{
@@ -66,30 +77,59 @@ lastName.addEventListener('input',()=>{
     }
 });
 
-phoneNumber.addEventListener('input',()=>{
+function checkPhoneNumber(){
     let text = phoneNumber.value;
     let length = text.length;
     if(length > 0 && length < 10)
         {
-            btnSubmit.disabled = true;
-            errorMessage[3].innerHTML = ` [Must have 10 digits]`;
+            return false;
         }
-        else{
-            btnSubmit.disabled = false;
-            errorMessage[3].innerHTML = ` `;
+        else if(length==10){
+            return true;
         }
+}
+
+phoneNumber.addEventListener('input',()=>{
+    let check = checkPhoneNumber();
+    if(check){
+        errorMessage[3].innerHTML = ` `;
+    }
+    else{
+        errorMessage[3].innerHTML = ` [Must have 10 digits]`;
+    }
+    checkSubmitBtn();
 });
 
 slider.addEventListener('change',()=>{
     if(slider.checked){
         email.disabled = false;
-        email.required = true;
     }
     else{
         email.disabled = true;
-        email.required = false;
     }
 });
+
+email.addEventListener('input',checkSubmitBtn);
+
+function checkEmail(){
+    if(email.value){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+age.addEventListener('change',checkSubmitBtn);
+
+function checkAgeGroup(){
+    if(age.value==''){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
 
 pinCode.addEventListener('input',()=>{
     let text = pinCode.value;
@@ -143,5 +183,15 @@ window.onload = function() {
         for (var i = 0; i < z.length; i++) {
             districtSelect.options[districtSelect.options.length] = new Option(z[i], z[i]);
         }
+    }
+}
+
+
+function checkSubmitBtn(){
+    if(checkFirstName() && checkPhoneNumber() && checkUserName() && checkAgeGroup() && checkEmail()){
+        btnSubmit.disabled = false;
+    }
+    else{
+        btnSubmit.disabled = true;
     }
 }
