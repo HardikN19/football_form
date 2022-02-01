@@ -14,12 +14,13 @@
                 Football Registration Form
             </h2>
 
-            <form action="/" method="POST" class="form-box">
+            <form action="/welcome.html" method="POST" target="_self" class="form-box">
                 <div class="form-row">
                     <div class="form-column">
                         <label for="userName" class="form-label">USER NAME</label>
                         <span class="warning">*</span>
-                        <input type="text" name="userName" id="userName" class="input-col" placeholder="Enter username.." required>
+                        <span class="errorMessage warning"> </span>
+                        <input type="text" name="userName" id="userName" class="input-col" placeholder="Enter username.." required autofocus>
                     </div>
                     <div class="form-column">
                         <label for="firstName" class="form-label">FIRST NAME</label>
@@ -29,7 +30,9 @@
                     </div>
                     <div class="form-column">
                         <label for="lastName" class="form-label">LAST NAME</label>
+                        <span class="errorMessage warning"> </span>
                         <input type="text" name="lastName" id="lastName" class="input-col" placeholder="What is your last name?">
+                        
                     </div>
                 </div>
 
@@ -37,6 +40,7 @@
                     <div class="form-column">
                         <label for="number" class="form-label">PHONE NUMBER</label>
                         <span class="warning">*</span>
+                        <span class="errorMessage warning"> </span>
                         <br>
                         <div class="form-row">
                             <select name="code" id="code">
@@ -45,7 +49,9 @@
                             <option selected value="+91">+91</option>
                             <option value="+92">+92</option>
                             </select>
-                            <input type="number" name="number" id="number" placeholder="What is the best # to reach you?" required>
+                            <input type="number" name="number" id="phoneNumber" placeholder="What is the best # to reach you?" required 
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength = "10">
                         </div>     
                     </div>
                     <div class="form-column">
@@ -75,7 +81,7 @@
                         <span class="warning">*</span>
                         <br><br>
                         <div class="form-option">
-                            <input type="radio" id="team1" name="myTeam" value="chelsea">
+                            <input type="radio" id="team1" name="myTeam" value="chelsea" required>
                             <label for="chelsea">CHELSEA</label>
                         </div><br>
                         <div class="form-option">
@@ -95,28 +101,26 @@
                     <div class="form-column"> 
                         <label for="position" class="form-label">DESIRED POSITION</label>
                         <span class="warning">*</span>
+                        <span class="errorMessage warning"> </span>
                         <br><br>
                         <div class="form-option">
-                            <input type="checkbox" id="position1" name="position1" value="goalKeeper">
+                            <input type="checkbox" class="position" name="position" value="goalKeeper">
                             <label for="position1" class="form-option"> GOAL KEEPER</label>
                         </div><br>
                         <div class="form-option">
-                            <input type="checkbox" id="position2" name="position2" value="offensive">
+                            <input type="checkbox" class="position" name="position" value="offensive">
                             <label for="position2" class="form-option"> OFFENSIVE</label>
                         </div><br>
                         <div class="form-option">
-                            <input type="checkbox" id="position3" name="position3" value="defence">
+                            <input type="checkbox" class="position" name="position" value="defence">
                             <label for="position3" class="form-option"> DEFENCE</label>
                         </div><br>
                         <div class="form-option">
-                            <input type="checkbox" id="position4" name="position4" value="receiver">
+                            <input type="checkbox" class="position" name="position" value="receiver">
                             <label for="position4" class="form-option"> RECEIVER</label>
-                        </div>
-                        
-                        
-                        
-                        
+                        </div>    
                     </div>
+
                     <div class="form-column">
                         <label for="address" class="form-label">ADDRESS</label> <br>
                         <textarea rows="6" cols="20" class="input-col" name="address"></textarea>
@@ -124,9 +128,9 @@
                     <div class="form-column">
                         <label for="pinCode" class="form-label">PIN CODE</label>
                         <span class="errorMessage warning"> </span> <br>
-                        <input type="number" name="pinCode" id="pinCode" class="input-col" maxlength="6" placeholder="Enter your Pin code"
+                        <input type="number" name="pinCode" id="pinCode" class="input-col" placeholder="Enter your Pin code"
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                        maxlength = "10">
+                        maxlength = "6">
                     </div>
                 </div>
                 <div class="form-row countryColumn">
@@ -134,20 +138,20 @@
                         <label for="country" class="form-label">COUNTRY</label>
                         <span class="warning">*</span>
                         <br>
-                        <select name="country" id="countySelect" size="1" class="input-col">
+                        <select name="country" id="countySelect" size="1" class="input-col" required>
                         <option value="" selected="selected">Country</option>
                         </select><br>
                         
                         <label for="state" class="form-label">STATE</label>                        <span class="warning">*</span>
                         <br>
-                        <select name="state" id="stateSelect" size="1" class="input-col">
+                        <select name="state" id="stateSelect" size="1" class="input-col" required>
                         <option value="" selected="selected">State</option>
                         </select><br>
                         
                         <label for="district" class="form-label">DISTRICT</label>
                         <span class="warning">*</span>
                         <br>
-                        <select name="district" id="districtSelect" size="1" class="input-col">
+                        <select name="district" id="districtSelect" size="1" class="input-col" required>
                         <option value="" selected="selected">District</option>
                         </select><br>
                     </div>

@@ -58,10 +58,10 @@ body{
     flex-basis: 0;
 }
 
-#code, #number, select{
+#code, #phoneNumber, select{
     margin: 0.5rem 0;
 }
-#number{
+#phoneNumber{
     flex-grow: 1;
 }
 
@@ -83,6 +83,7 @@ body{
 .warning{
     color: red;
     margin: 5px 0 0 -5px;
+    font-size: 14px;
 }
 textarea {
     resize: none;
