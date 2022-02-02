@@ -66,15 +66,12 @@ lastName.addEventListener('input',()=>{
     for(let i=0;i<length;i++){
         if(text[i]>='a'&& text[i]<='z' || text[i]>='A'&& text[i]<='Z' || text[i]==' ')
         {
-            btnSubmit.disabled = false;
             errorMessage[2].innerHTML = ``;
         }
         else if(length == 0){
-            btnSubmit.disabled = false;
             errorMessage[2].innerHTML = ``;
         }
         else{
-            btnSubmit.disabled = true;
             errorMessage[2].innerHTML = `[Only alphabet allowed]`;
         }
     }
