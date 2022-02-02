@@ -80,13 +80,12 @@ lastName.addEventListener('input',()=>{
 function checkPhoneNumber(){
     let text = phoneNumber.value;
     let length = text.length;
-    if(length > 0 && length < 10)
-        {
-            return false;
-        }
-        else if(length==10){
+    if(length==10){
             return true;
-        }
+    }
+    else{
+        return false;
+    }
 }
 
 phoneNumber.addEventListener('input',()=>{
@@ -157,13 +156,12 @@ for (let i=0, len=position.length; i<len; i++) {
 function checkpinCode(){
     let text = pinCode.value;
     let length = text.length;
-    if(length == 0 || length == 6)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
+    if(length == 0 || length == 6){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 pinCode.addEventListener('input',()=>{
@@ -207,8 +205,6 @@ window.onload = function() {
     email.required = true;
     btnSubmit.disabled = true;
 
-    
-    
     for (var x in CountryObject) {
         countySelect.options[countySelect.options.length] = new Option(x, x);
     }
@@ -229,7 +225,6 @@ window.onload = function() {
         }
     }
 }
-
 
 function checkSubmitBtn(){
     if(checkFirstName() && checkPhoneNumber() && checkUserName() && checkAgeGroup() && checkEmail() && checkCountry() && checkTeam() && checkPosition() && checkpinCode()){
