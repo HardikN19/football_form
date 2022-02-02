@@ -6,8 +6,13 @@ const pinCode = document.querySelector('#pinCode');
 const slider = document.querySelector('#slide');
 const email = document.querySelector('#email');
 const age = document.querySelector('#age');
+const team = document.querySelectorAll('.team');
+const position = document.querySelectorAll('.position');
 const errorMessage = document.querySelectorAll('.errorMessage');
 const btnSubmit = document.querySelector('#btn-submit');
+const countySelect = document.getElementById("countySelect");
+const stateSelect = document.getElementById("stateSelect");
+const districtSelect = document.getElementById("districtSelect");
 
 function checkUserName(){
     let text = userName.value;
@@ -17,19 +22,17 @@ function checkUserName(){
         {
             return false;
         }
-        else{
-            return true;
-        }
     }
+    return true;
 }
 
 userName.addEventListener('input',()=>{
     let check = checkUserName();
     if(check){
-        errorMessage[1].innerHTML = ``;
+        errorMessage[0].innerHTML = ``;
     }
     else{
-        errorMessage[1].innerHTML = `[Only alphabet allowed / no space]`;
+        errorMessage[0].innerHTML = `[Only alphabet allowed / no space]`;
     }
     checkSubmitBtn();
 });
@@ -130,20 +133,64 @@ function checkAgeGroup(){
     }
 }
 
+function checkTeam(){
+    for(let i =0;i<4;i++){
+        if(team[i].checked){
+            return true;
+        }
+    }
+    return false;
+}
+for (let i=0, len=team.length; i<len; i++) {
+    team[i].onclick = checkSubmitBtn;
+} 
 
-pinCode.addEventListener('input',()=>{
+function checkPosition(){
+    for(let i =0;i<4;i++){
+        if(position[i].checked){
+            return true;
+        }
+    }
+    return false;
+}
+for (let i=0, len=position.length; i<len; i++) {
+    position[i].onclick = checkSubmitBtn;
+} 
+
+function checkpinCode(){
     let text = pinCode.value;
     let length = text.length;
-    if(length > 0 && length < 6)
+    if(length == 0 || length == 6)
         {
-            btnSubmit.disabled = true;
-            errorMessage[5].innerHTML = ` [Must have 6 digits]`;
+            return true;
         }
         else{
-            btnSubmit.disabled = false;
-            errorMessage[5].innerHTML = ` `;
+            return false;
         }
+}
+
+pinCode.addEventListener('input',()=>{
+    let check = checkpinCode();
+    if(check){
+        errorMessage[5].innerHTML = ``;
+    }
+    else{
+        errorMessage[5].innerHTML = ` [Must have 6 digits]`;
+    }
+    checkSubmitBtn();
 });
+
+function checkCountry(){
+    if(countySelect.value && stateSelect.value && districtSelect.value){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+countySelect.addEventListener('change',checkSubmitBtn);
+stateSelect.addEventListener('change',checkSubmitBtn);
+districtSelect.addEventListener('change',checkSubmitBtn);
 
 var CountryObject = {
     "India": {
@@ -158,12 +205,12 @@ var CountryObject = {
   }
   
 window.onload = function() {
+    slider.checked = false;
+    email.disabled = true;
     email.required = true;
     btnSubmit.disabled = true;
 
-    var countySelect = document.getElementById("countySelect");
-    var stateSelect = document.getElementById("stateSelect");
-    var districtSelect = document.getElementById("districtSelect");
+    
     
     for (var x in CountryObject) {
         countySelect.options[countySelect.options.length] = new Option(x, x);
@@ -188,7 +235,7 @@ window.onload = function() {
 
 
 function checkSubmitBtn(){
-    if(checkFirstName() && checkPhoneNumber() && checkUserName() && checkAgeGroup() && checkEmail()){
+    if(checkFirstName() && checkPhoneNumber() && checkUserName() && checkAgeGroup() && checkEmail() && checkCountry() && checkTeam() && checkPosition() && checkpinCode()){
         btnSubmit.disabled = false;
     }
     else{

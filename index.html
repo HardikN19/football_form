@@ -14,33 +14,32 @@
                 Football Registration Form
             </h2>
 
-            <form action="/welcome.html" method="POST" target="_self" class="form-box">
+            <form action="/welcome.html" method="POST" target="_self" class="form-box" autocomplete="off">
                 <div class="form-row">
                     <div class="form-column">
                         <label for="userName" class="form-label">USER NAME</label>
-                        <span class="warning">*</span>
+                        <sup class="warning">*</sup>
+                        
+                        <input type="text" name="userName" id="userName" class="input-col" placeholder="Enter username.." required autofocus autocomplete="off">
                         <span class="errorMessage warning"> </span>
-                        <input type="text" name="userName" id="userName" class="input-col" placeholder="Enter username.." required autofocus>
                     </div>
                     <div class="form-column">
                         <label for="firstName" class="form-label">FIRST NAME</label>
-                        <span class="warning">* </span>
+                        <sup class="warning">* </sup>
+                        <input type="text" name="firstName" id="firstName" class="input-col" placeholder="What is your name?" required autocomplete="off">
                         <span class="errorMessage warning"> </span>
-                        <input type="text" name="firstName" id="firstName" class="input-col" placeholder="What is your name?" required>
                     </div>
                     <div class="form-column">
                         <label for="lastName" class="form-label">LAST NAME</label>
-                        <span class="errorMessage warning"> </span>
                         <input type="text" name="lastName" id="lastName" class="input-col" placeholder="What is your last name?">
-                        
+                        <span class="errorMessage warning"> </span>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-column">
                         <label for="number" class="form-label">PHONE NUMBER</label>
-                        <span class="warning">*</span>
-                        <span class="errorMessage warning"> </span>
+                        <sup class="warning">*</sup>
                         <br>
                         <div class="form-row">
                             <select name="code" id="code">
@@ -52,6 +51,7 @@
                             <input type="number" name="number" id="phoneNumber" placeholder="What is the best # to reach you?" required 
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                             maxlength = "10">
+                            <span class="errorMessage warning"> </span>
                         </div>     
                     </div>
                     <div class="form-column">
@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-column">
                         <label for="age" class="form-label">AGE GROUP</label>
-                        <span class="warning">*</span>
+                        <sup class="warning">*</sup>
                         <br>
                         <select name="age" id="age" class="input-col" required>
                             <option value="">Select age group</option>
@@ -78,29 +78,29 @@
                 <div class="form-row">
                     <div class="form-column">
                         <label for="team" class="form-label">DESIRED TEAM</label>
-                        <span class="warning">*</span>
+                        <sup class="warning">*</sup>
                         <br><br>
                         <div class="form-option">
-                            <input type="radio" id="team1" name="myTeam" value="chelsea" required>
+                            <input type="radio" class="team" name="myTeam" value="chelsea" required>
                             <label for="chelsea">CHELSEA</label>
                         </div><br>
                         <div class="form-option">
-                            <input type="radio" id="team2" name="myTeam" value="manchester">
+                            <input type="radio" class="team" name="myTeam" value="manchester">
                             <label for="manchester">MANCHESTER UNITED</label>
                         </div><br>
                         <div class="form-option">
-                            <input type="radio" id="team3" name="myTeam" value="liverpool">
+                            <input type="radio" class="team" name="myTeam" value="liverpool">
                             <label for="liverpool">LIVERPOOL</label>
                         </div><br>
                         <div class="form-option">
-                            <input type="radio" id="team4" name="myTeam" value="barcelona">
+                            <input type="radio" class="team" name="myTeam" value="barcelona">
                             <label for="barcelona">BARCELONA</label>
                         </div>
                         
                     </div>
                     <div class="form-column"> 
                         <label for="position" class="form-label">DESIRED POSITION</label>
-                        <span class="warning">*</span>
+                        <sup class="warning">*</sup>
                         <span class="errorMessage warning"> </span>
                         <br><br>
                         <div class="form-option">
@@ -127,32 +127,33 @@
                     </div>
                     <div class="form-column">
                         <label for="pinCode" class="form-label">PIN CODE</label>
-                        <span class="errorMessage warning"> </span> <br>
                         <input type="number" name="pinCode" id="pinCode" class="input-col" placeholder="Enter your Pin code"
                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                         maxlength = "6">
+                        <span class="errorMessage warning"> </span> <br>
                     </div>
                 </div>
                 <div class="form-row countryColumn">
                     <div id="country-field">
                         <label for="country" class="form-label">COUNTRY</label>
-                        <span class="warning">*</span>
+                        <sup class="warning">*</sup>
                         <br>
                         <select name="country" id="countySelect" size="1" class="input-col" required>
-                        <option value="" selected="selected">Country</option>
+                        <option value="" selected="selected">Select the country</option>
                         </select><br>
                         
-                        <label for="state" class="form-label">STATE</label>                        <span class="warning">*</span>
+                        <label for="state" class="form-label">STATE</label>                        
+                        <sup class="warning">*</sup>
                         <br>
                         <select name="state" id="stateSelect" size="1" class="input-col" required>
-                        <option value="" selected="selected">State</option>
+                        <option value="" selected="selected">Select the state</option>
                         </select><br>
                         
                         <label for="district" class="form-label">DISTRICT</label>
-                        <span class="warning">*</span>
+                        <sup class="warning">*</sup>
                         <br>
                         <select name="district" id="districtSelect" size="1" class="input-col" required>
-                        <option value="" selected="selected">District</option>
+                        <option value="" selected="selected">Select the city</option>
                         </select><br>
                     </div>
                 </div>

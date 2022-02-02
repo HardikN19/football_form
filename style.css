@@ -28,7 +28,7 @@ body{
     
 }
 .form-heading{
-    padding: 0.5rem;
+    padding: 0.3rem;
     text-align: center;
 }
 
@@ -87,8 +87,12 @@ body{
 }
 .warning{
     color: red;
-    margin: 5px 0 0 -5px;
-    font-size: 14px;
+    font-size: 13px;
+    margin-left: -4px;
+}
+.errorMessage{
+    
+    
 }
 textarea {
     resize: none;
