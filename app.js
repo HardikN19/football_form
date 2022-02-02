@@ -32,7 +32,7 @@ userName.addEventListener('input',()=>{
         errorMessage[0].innerHTML = ``;
     }
     else{
-        errorMessage[0].innerHTML = `[Only alphabet allowed / no space]`;
+        errorMessage[0].innerHTML = `[Please remove the space]`;
     }
     checkSubmitBtn();
 });
@@ -55,7 +55,7 @@ firstName.addEventListener('input',()=>{
         errorMessage[1].innerHTML = ``;
     }
     else{
-        errorMessage[1].innerHTML = `[Only alphabet allowed / no space]`;
+        errorMessage[1].innerHTML = `[Only alphabet allowed without space]`;
     }
     checkSubmitBtn();
 });
