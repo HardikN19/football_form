@@ -164,7 +164,6 @@ function checkCountry(){
         return false;
     }
 }
-
 userName.addEventListener('input',checkSubmitBtn);
 firstName.addEventListener('input',checkSubmitBtn);
 phoneNumber.addEventListener('input',checkSubmitBtn);
