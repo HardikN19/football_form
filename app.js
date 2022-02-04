@@ -18,8 +18,9 @@ function checkUserName(){
     let text = userName.value;
     let length = text.length;
     if(length == 0){
-            return false;
-        }
+        errorMessage[0].innerHTML = ``;
+        return false;
+    }
     for(let i=0;i<length;i++){
         if(text[i]==' '){
             errorMessage[0].innerHTML = `[Please remove the space]`;
@@ -40,7 +41,6 @@ function checkFirstName(){
     }
     for(let i=0;i<length;i++){
         if(text[i]>='a'&& text[i]<='z' || text[i]>='A'&& text[i]<='Z') {
-            console.log(length);
             errorMessage[1].innerHTML = ``;
         }
         else{
@@ -51,23 +51,26 @@ function checkFirstName(){
     return true;
 }
 
-
-lastName.addEventListener('input',()=>{
+function checkLastName(){
     let text = lastName.value;
     let length = text.length;
+    if(length == 0){
+        errorMessage[2].innerHTML = ``;
+        return true;
+    }
     for(let i=0;i<length;i++){
         if(text[i]>='a'&& text[i]<='z' || text[i]>='A'&& text[i]<='Z' || text[i]==' ')
         {
             errorMessage[2].innerHTML = ``;
         }
-        else if(length == 0){
-            errorMessage[2].innerHTML = ``;
-        }
         else{
             errorMessage[2].innerHTML = `[Only alphabet allowed]`;
+            return false;
         }
     }
-});
+    return true;
+}
+
 
 function checkPhoneNumber(){
     let text = phoneNumber.value;
@@ -167,6 +170,7 @@ function checkCountry(){
 
 userName.addEventListener('input',checkSubmitBtn);
 firstName.addEventListener('input',checkSubmitBtn);
+lastName.addEventListener('input',checkSubmitBtn);
 phoneNumber.addEventListener('input',checkSubmitBtn);
 email.addEventListener('input',checkSubmitBtn);
 age.addEventListener('change',checkSubmitBtn);
@@ -190,7 +194,6 @@ var CountryObject = {
 window.onload = function() {
     slider.checked = false;
     email.disabled = true;
-    email.required = true;
     btnSubmit.disabled = true;
 
     for (var x in CountryObject) {
@@ -215,7 +218,7 @@ window.onload = function() {
 }
 
 function checkSubmitBtn(){
-    if(checkFirstName() & checkPhoneNumber() & checkUserName() & checkAgeGroup() & checkEmail() & checkCountry() & checkTeam() & checkPosition() & checkpinCode()){
+    if(checkFirstName() & checkPhoneNumber() & checkUserName() & checkAgeGroup() & checkEmail() & checkCountry() & checkTeam() & checkPosition() & checkpinCode() & checkLastName()){
         btnSubmit.disabled = false;
     }
     else{
