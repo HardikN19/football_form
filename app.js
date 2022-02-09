@@ -1,4 +1,5 @@
 const userName = document.querySelector('#userName');
+const btnFetch = document.querySelector('.btn-fetch');
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const phoneNumber = document.querySelector('#phoneNumber');
@@ -195,6 +196,7 @@ window.onload = function() {
     slider.checked = false;
     email.disabled = true;
     btnSubmit.disabled = true;
+    btnFetch.disabled = true;
 
     for (var x in CountryObject) {
         countySelect.options[countySelect.options.length] = new Option(x, x);

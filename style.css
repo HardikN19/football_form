@@ -154,10 +154,17 @@ textarea {
     padding: 0.2rem 3rem;
 }
 
-#btn-submit:disabled{
+#btn-submit:disabled, .btn-fetch:disabled{
     background-color: gray;
 }
 
-
-
-  
+.btn-fetch{
+    position: relative;
+    display: block;
+    float: right;
+    width: 60px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10%;
+  }
